@@ -1,0 +1,31 @@
+name: Projekt entpacken
+
+on:
+  push:
+    paths:
+      - "DiscounterVergleich_Live_komplett.zip"
+      - ".github/workflows/unpack.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Projekt herunterladen
+        uses: actions/checkout@v4
+
+      - name: ZIP entpacken
+        run: |
+          unzip -o DiscounterVergleich_Live_komplett.zip
+          rm DiscounterVergleich_Live_komplett.zip
+
+      - name: Dateien speichern
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "Projekt entpackt [skip ci]" || echo "Keine Änderungen"
+          git push
