@@ -1,4 +1,5 @@
-name: APK bauen
+      - name: AndroidX aktivieren
+        run: echo "android.useAndroidX=true" > android/gradle.properties: APK bauen
 
 on:
   workflow_dispatch:
