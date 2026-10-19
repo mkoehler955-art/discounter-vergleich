@@ -27,7 +27,7 @@ class MainActivity: AppCompatActivity() {
         val root=LinearLayout(this).apply{orientation=LinearLayout.VERTICAL;setPadding(28,30,28,40)}
         root.addView(TextView(this).apply{text="🛒 Discounter-Vergleich";textSize=28f;typeface=Typeface.DEFAULT_BOLD})
         root.addView(TextView(this).apply{text="Live-Angebote vergleichen";textSize=16f;setPadding(0,5,0,18)})
-        search=EditText(this).apply{hint="Produkt suchen, z. B. Milch";singleLine=true}
+        search=EditText(this).apply{hint="Produkt suchen, z. B. Milch";setSingleLine(true)}
         root.addView(search, lp())
         root.addView(Button(this).apply{text="🔎 Preise vergleichen";setOnClickListener{load(search.text.toString())}},lp())
         root.addView(Button(this).apply{text="🔄 Angebote aktualisieren";setOnClickListener{refresh()}},lp())
