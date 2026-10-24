@@ -90,6 +90,7 @@ def save(rows):
 @app.get("/health")
 def health(): return {"ok": True, "time": datetime.now(timezone.utc).isoformat()}
 
+@app.get("/refresh")
 @app.post("/refresh")
 def refresh():
     result, errors = {}, {}
