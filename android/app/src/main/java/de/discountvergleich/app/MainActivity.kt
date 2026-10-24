@@ -15,7 +15,7 @@ import kotlin.concurrent.thread
 data class Offer(val store:String,val product:String,val price:Double,val pack:String,val unit:Double?)
 
 class MainActivity: AppCompatActivity() {
-    private val apiBase = "http://10.0.2.2:8000"
+    private val apiBase = "https://discounter-vergleich.onrender.com"
     private lateinit var search:EditText
     private lateinit var box:LinearLayout
     private lateinit var status:TextView
